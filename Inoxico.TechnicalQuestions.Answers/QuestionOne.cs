@@ -23,6 +23,8 @@ namespace Inoxico.TechnicalQuestions.Answers
                     if (!string.IsNullOrEmpty(word))
                         currentWordLength++;
                 }
+                if(currentWordLength > longestWordLength)
+                    longestWordLength = currentWordLength;
             }
 
 
