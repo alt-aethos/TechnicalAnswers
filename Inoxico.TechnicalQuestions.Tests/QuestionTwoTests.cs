@@ -7,13 +7,23 @@ namespace Inoxico.TechnicalQuestions.Tests
 
     {
         [Fact]
-        public void SampleTest()
+        public void GivenTest()
         {
             var points = new[] { 0, 1, 3, -2, 0, 1, 0, -3, 2, 3 };
 
             var result = QuestionTwo.GetPitDepth(points);
 
             Assert.Equal(4, result);
+        }
+
+        [Fact]
+        public void AlternativeTest()
+        {
+            var points = new[] { 1, 2, 3, 1, 2, 3, 1, 2, 3 };
+
+            var result = QuestionTwo.GetPitDepth(points);
+
+            Assert.Equal(2, result);
         }
     }
 }

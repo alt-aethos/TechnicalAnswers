@@ -7,7 +7,7 @@ namespace Inoxico.TechnicalQuestions.Answers
         {
             Pit[] pits = GetPits(points);
             int deepestPitLength = -1;
-            int deepestDepth = 0;
+            int deepestDepth = 1000000;
 
             foreach(Pit pit in pits)
             {
@@ -29,18 +29,17 @@ namespace Inoxico.TechnicalQuestions.Answers
             //Variables to keep track of pit context
             bool counting = false;
             int highestPoint = 0;
-            int lowestPoint = 0;
+            int lowestPoint = 1000000;
 
 
             for (int i = 0; i < points.Length - 1; i++)
             {
-                if (points[i] < 0 && !counting)
-                    continue;
-
-
-
                 int point = points[i];
                 int nextPoint = points[i + 1];
+
+                if (point < 0 && !counting)
+                    continue;
+
                 if (!DetermineIncreasing(point,points[i+1]))
                 {
                     //if we have not been counting and we have found that this is decreasing. start counting and add current point as the highest point
@@ -56,13 +55,13 @@ namespace Inoxico.TechnicalQuestions.Answers
                 }
                 else
                 {
-                    if (counting && point >= 0)
+                    if (counting)
                     {
                         //if we have been counting and the current point is above 0. stop counting and add values as current pit. Reset variables for future iterations
                         pits.Add(new Pit(highestPoint, lowestPoint, point));
                         counting = false;
                         highestPoint = point;
-                        lowestPoint = 0;
+                        lowestPoint = 1000000;
 
                         i--; //Bring i back as there may be another pit directly after this pit
                         continue;
