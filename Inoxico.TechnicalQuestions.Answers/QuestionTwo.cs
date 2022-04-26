@@ -12,9 +12,16 @@ namespace Inoxico.TechnicalQuestions.Answers
         {
             List<Tuple<int, int, int>> pits = new List<Tuple<int, int, int>>();
 
+            bool counting = false;
             for (int i = 0; i < points.Length; i++)
             {
-                
+                if (points[i] > 0 && !counting)
+                    continue;
+                if(!DetermineIncreasing(points[i],points[i+1]))
+                {
+                    
+                }
+
             }
         }
 
