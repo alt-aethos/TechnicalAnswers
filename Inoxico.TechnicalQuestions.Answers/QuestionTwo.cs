@@ -7,12 +7,17 @@ namespace Inoxico.TechnicalQuestions.Answers
         {
             Pit[] pits = GetPits(points);
             int deepestPitLength = -1;
+            int deepestDepth = 0;
 
             foreach(Pit pit in pits)
             {
                 int pitDepth = pit.GetDepth();
-                if (pitDepth > deepestPitLength) // if current pit depth is deeper than last. replace it
-                    deepestPitLength = pit.GetDepth();
+                if (pit.Q < deepestDepth) // if current pit depth is deeper than last. replace it
+                {
+                    deepestPitLength = pitDepth; 
+                    deepestDepth = pit.Q;
+                }
+
             }
             return deepestPitLength;
         }
@@ -35,6 +40,7 @@ namespace Inoxico.TechnicalQuestions.Answers
 
 
                 int point = points[i];
+                int nextPoint = points[i + 1];
                 if (!DetermineIncreasing(point,points[i+1]))
                 {
                     //if we have not been counting and we have found that this is decreasing. start counting and add current point as the highest point
@@ -42,12 +48,11 @@ namespace Inoxico.TechnicalQuestions.Answers
                     {
                         highestPoint = point;
                         counting = true;
-                        continue;
                     }
 
                     // if point is lower than current lowest. set this point as the new lowest
-                    if (point < lowestPoint)
-                        lowestPoint = point;
+                    if (nextPoint < lowestPoint)
+                        lowestPoint = nextPoint;
                 }
                 else
                 {
@@ -87,9 +92,9 @@ namespace Inoxico.TechnicalQuestions.Answers
 
         public Pit(int p, int q, int r)
         {
-            P = p;
-            Q = q;
-            R = r;
+            P = p; // Start of pit
+            Q = q; // Deepest point of pit
+            R = r; // End of pit
         }
 
         public int GetDepth()
