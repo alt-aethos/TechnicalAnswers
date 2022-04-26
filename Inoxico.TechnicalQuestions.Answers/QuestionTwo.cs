@@ -14,7 +14,7 @@ namespace Inoxico.TechnicalQuestions.Answers
             {
                 if (point > 1000000)
                     throw new ArgumentException("No points can be greater than 100,000,000");
-                if (point < 1000000)
+                if (point < -1000000)
                     throw new ArgumentException("No points can be less than 100,000,000");
             }
 
