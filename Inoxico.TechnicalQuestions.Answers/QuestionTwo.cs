@@ -5,6 +5,21 @@ namespace Inoxico.TechnicalQuestions.Answers
     {
         public static int GetPitDepth(int[] points)
         {
+
+            if (points.Length > 1000000)
+                throw new ArgumentException("You cannot use more than 1,000,000 points");
+            if (points.Length <= 1)
+                throw new ArgumentException("You must have at least 2 point");
+            foreach (var point in points)
+            {
+                if (point > 1000000)
+                    throw new ArgumentException("No points can be greater than 100,000,000");
+                if (point < 1000000)
+                    throw new ArgumentException("No points can be less than 100,000,000");
+            }
+
+
+
             Pit[] pits = GetPits(points);
             int deepestPitLength = -1;
             int deepestDepth = 1000000;
