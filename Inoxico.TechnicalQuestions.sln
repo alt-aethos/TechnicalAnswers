@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inoxico.TechnicalQuestions.Answers", "Inoxico.TechnicalQuestions.Answers\Inoxico.TechnicalQuestions.Answers.csproj", "{4F4EF2EE-D5C6-4C92-A1AD-CA3CD6A23DFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inoxico.TechnicalQuestions.Tests", "Inoxico.TechnicalQuestions.Tests\Inoxico.TechnicalQuestions.Tests.csproj", "{6DE82EEA-47B9-45AB-886E-04E1BBB66F1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F4EF2EE-D5C6-4C92-A1AD-CA3CD6A23DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F4EF2EE-D5C6-4C92-A1AD-CA3CD6A23DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F4EF2EE-D5C6-4C92-A1AD-CA3CD6A23DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F4EF2EE-D5C6-4C92-A1AD-CA3CD6A23DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DE82EEA-47B9-45AB-886E-04E1BBB66F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DE82EEA-47B9-45AB-886E-04E1BBB66F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DE82EEA-47B9-45AB-886E-04E1BBB66F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DE82EEA-47B9-45AB-886E-04E1BBB66F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8510A7E-C8B1-4516-B94D-1DC44FECA22C}
+	EndGlobalSection
+EndGlobal
