@@ -10,8 +10,11 @@ namespace Inoxico.TechnicalQuestions.Answers
 
             foreach(Pit pit in pits)
             {
-                deepestPitLength = pit.GetDepth();
+                int pitDepth = pit.GetDepth();
+                if (pitDepth > deepestPitLength) // if current pit depth is deeper than last. replace it
+                    deepestPitLength = pit.GetDepth();
             }
+            return deepestPitLength;
         }
 
         private static Pit[] GetPits(int[] points)
@@ -91,7 +94,7 @@ namespace Inoxico.TechnicalQuestions.Answers
 
         public int GetDepth()
         {
-            return Math.Abs(P - Q);
+            return P - Q;
         }
     }
 }
